@@ -1,29 +1,37 @@
-# trianno
+# Trianno
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a Vue 3 application that provides an annotation tool for labeling images with a brush and fill tool. It also displays ground truth (GT) data from an existing dataset for easier annotation. Users can switch annotation labels with a right-click.
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- **Brush Tool**: Annotate images using a brush with adjustable size.
+- **Fill Tool**: Quickly fill regions with the current annotation label.
+- **Label Switching**: Right-click to cycle between Foreground, Background, and Unknown labels.
+- **Ground Truth Display**: View the existing dataset's ground truth alongside the images to assist with annotations.
 
 ## Project Setup
 
-```sh
-npm install
-```
+### Client and Server
 
-### Compile and Hot-Reload for Development
+1. Install dependencies for both the client (Vue.js) and server (Node.js):
+   ```sh
+   cd backend
+   node server.js
+   ```
 
-```sh
-npm run dev
-```
+2. Start the Vue.js development server:
+   ```sh
+   npm run dev
+   ```
 
-### Compile and Minify for Production
+3. Open the application in your browser at http://localhost:XXXX.
 
-```sh
-npm run build
-```
+## Usage
+
+1. Start both the client and server as described above.
+2. Use the brush or fill tool to annotate images.
+   - **Brush**: Left-click and drag to draw.
+   - **Fill**: Select the fill tool and click to flood-fill a region.
+   - **Right-Click**: Switch between Foreground (255), Background (0), and Unknown (128) labels.
+3. The current ground truth data is displayed alongside the images for reference.
+4. Click **Save Annotation** to save your work.

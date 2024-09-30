@@ -104,6 +104,10 @@ export default {
   },
   created() {
     this.getFiles();
+    window.addEventListener('keydown', this.handleKeydown);
+  },
+  beforeDestroy() {
+    window.removeEventListener('keydown', this.handleKeydown);
   },
   mounted() {
     // Disable right-click menu
@@ -112,6 +116,26 @@ export default {
     });
   },
   methods: {
+    handleKeydown(event) {
+      switch (event.key) {
+        case 'z':
+          this.undo();
+          break;
+        case 'x':
+          this.currentTool = this.currentTool === 'brush' ? 'fill' : 'brush';
+          this.updateBrushCursor();
+          break;
+        case 's':
+          this.saveTrimap();
+          break;
+        case 'q':
+          this.prevImage();
+          break;
+        case 'w':
+          this.nextImage();
+          break;
+      }
+    },
     undo() {
       if (this.history.length > 0) {
         const lastState = this.history.pop();

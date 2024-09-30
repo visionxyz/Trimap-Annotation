@@ -1,6 +1,6 @@
 # Trianno
 
-This project is a Vue 3 application that provides an annotation tool for labeling images with a brush and fill tool. It also displays ground truth (GT) data from an existing dataset for easier annotation. Users can switch annotation labels with a right-click.
+This project is a Vue 3 application that provides an annotation tool for labeling images with a brush and fill tool. It also displays ground truth (GT) data from an existing dataset for easier annotation. Users can switch annotation labels with the 'x' key.
 
 ## Features
 
@@ -32,6 +32,8 @@ This project is a Vue 3 application that provides an annotation tool for labelin
 2. Use the brush or fill tool to annotate images.
    - **Brush**: Left-click and drag to draw.
    - **Fill**: Select the fill tool and click to flood-fill a region.
-   - **Right-Click**: Switch between Foreground (255), Background (0), and Unknown (128) labels.
 3. The current ground truth data is displayed alongside the images for reference.
-4. Click **Save Annotation** to save your work.
+4. Press **s** to save your work.
+5. Press **z** to undo the last action.
+6  Press **x** to switch between Brush and Fill.
+7. Press **q** to go to the previous image and **w** to go to the next image.
